@@ -6,10 +6,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import App from './components/app/App';
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import ResultsPage from "./pages/ResultsPage";
 import LoginPage from "./pages/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import './normalize.css';
@@ -28,35 +28,31 @@ const PrivateRoute = ({children}: {children: React.ReactElement}) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PrivateRoute><HomePage /></PrivateRoute>,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/about",
-    element: <AboutPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/results",
-    element: <ResultsPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/404",
-    element: <ErrorPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/registration",
-    element: <RegistrationPage />,
-  },
-  {
-    path: "/*",
-    element: <Navigate to="/404" replace />,
-  },
+    element: <App/>,
+    errorElement: <ErrorPage/>,
+    children: [
+        {
+            path: "/home",
+            element: <PrivateRoute><HomePage/></PrivateRoute>,
+        },
+        {
+            path: "/registration",
+            element: <RegistrationPage />,
+        },
+        {
+            path: "/login",
+            element: <LoginPage />,
+        },
+        {
+          path: "/about",
+          element: <AboutPage />,
+      },
+        {
+            path: "*",
+            element: <ErrorPage />,
+        },
+    ],
+},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

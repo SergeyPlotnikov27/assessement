@@ -36,7 +36,6 @@ export default function LoginForm (props: LoginFormProps) {
             wrapperCol={{ span: 16 }}
             style={{ maxWidth: 400 }}
             onFinish={submitHandler}
-            // autoComplete="off"
         >
             <Form.Item
                 label="Email"
