@@ -227,7 +227,7 @@ export default function PollutionPage() {
         xField: 'address',
         yField: 'value',
         // group: true,
-        stack: true,
+        // stack: true,
         colorField: 'parameter',
         axis: {
             x: {

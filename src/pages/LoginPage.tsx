@@ -15,7 +15,7 @@ export default function LoginPage () {
     const navigate = useNavigate();
 
     const loginHandler = async ({email, password}: LoginObjectInterface) => {
-        const payload = {login, email, password};
+        const payload = {email, password};
 
         try {
             const response = await fetch(`${serverAddress}/auth/login`, {

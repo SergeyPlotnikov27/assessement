@@ -44,7 +44,7 @@ export default function MyHeader() {
             <Menu
                 items={topNavItems}
                 mode="horizontal"
-                theme="dark"
+                theme="light"
                 defaultSelectedKeys={['home']}
             />
 
@@ -53,7 +53,7 @@ export default function MyHeader() {
                 <Button
                     onClick={logoutHandler}
                     size={'small'}
-                    type={'primary'}
+                    type={'dashed'}
                 >Выйти</Button>
             </Flex>}
         </Flex>

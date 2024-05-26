@@ -11,7 +11,7 @@ function App() {
         <Layout style={{minHeight: '100vh'}}>
             <Header><CustomHeader/></Header>
             <Content><Outlet /></Content>
-            <Footer style={{color: 'rgba(255, 255, 255, 0.65)', background: '#001529'}}>
+            <Footer style={{color: 'rgba(255, 255, 255, 0.65)', background: '#9fa4af'}}>
                 {new Date().getFullYear()}
             </Footer>
         </Layout>
