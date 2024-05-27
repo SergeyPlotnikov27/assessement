@@ -12,6 +12,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import LoginPage from "./pages/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage";
+import CityPage from "./pages/CityPage";
 import './normalize.css';
 import {AuthProvider, useAuthContext} from "./context/authContext";
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         {
             path: "/home",
             element: <PrivateRoute><HomePage/></PrivateRoute>,
+        },
+        {
+          path: "/city",
+          element: <PrivateRoute><CityPage/></PrivateRoute>,
         },
         {
             path: "/registration",

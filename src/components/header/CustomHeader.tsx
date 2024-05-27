@@ -22,10 +22,16 @@ export default function MyHeader() {
     ];
 
     if (isLogin) {
-        topNavItems.push({
-            key: 'home',
-            label: <NavLink to="/home">Главная</NavLink>
-        },)
+        topNavItems.push(
+            {
+                key: 'home',
+                label: <NavLink to="/home">Главная</NavLink>
+            },
+            {
+                key: 'city',
+                label: <NavLink to="/city">Информация о населенном пункте</NavLink>
+            },
+        )
     } else {
         topNavItems.push(        
             {
@@ -49,11 +55,11 @@ export default function MyHeader() {
             />
 
             {isLogin && user && <Flex gap={'middle'} align={'center'}>
-                <span style={{color: 'white'}}>{JSON.parse(user).email}</span>
+                <span style={{color: 'blue'}}>{JSON.parse(user).email}</span>
                 <Button
                     onClick={logoutHandler}
                     size={'small'}
-                    type={'dashed'}
+                    type={'primary'}
                 >Выйти</Button>
             </Flex>}
         </Flex>

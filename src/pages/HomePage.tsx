@@ -117,7 +117,7 @@ type ChartDataType = {
     value: number,
 }
 
-export default function PollutionPage() {
+export default function HomePage() {
     const [form] = Form.useForm();
 
     // const [address, setAddress] = useState('');
@@ -227,7 +227,7 @@ export default function PollutionPage() {
         xField: 'address',
         yField: 'value',
         // group: true,
-        // stack: true,
+        stack: true,
         colorField: 'parameter',
         axis: {
             x: {

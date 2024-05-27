@@ -1,6 +1,7 @@
 import {Outlet} from "react-router-dom";
 import CustomHeader from "../header/CustomHeader";
 import './App.css'
+import {Flex} from "antd"
 
 import { Layout } from 'antd';
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('node:path');
 const {authRouter} = require('./routes/authRouter')
+const {pollutionRouter} = require("./routes/pollutionsRouter");
 require('dotenv/config')
 const server = express();
 const cors = require('cors')
@@ -9,6 +10,7 @@ const bodyParser = require('body-parser')
 server.use(bodyParser.json());
 server.use(cors());
 server.use('/auth', authRouter);
+server.use('/pollutions', pollutionRouter);
 
 // статика frontend React
 server.use(express.static(path.join(__dirname, '../build')));
