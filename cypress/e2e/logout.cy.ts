@@ -3,14 +3,14 @@ describe('Login then logout', () => {
     it('login first then clears localStorage user object and redirect to login', function () {
       cy.login(Cypress.env('test_email'), Cypress.env('test_password'))
   
-      cy.visit('/city')
+      cy.visit('localhost:9500/city')
   
       context(' ждём 3 секунды, потом logout', () => {
         cy.wait(3000)
   
         cy.get('button[data-role="logout"]').click()
   
-        cy.url().should('include', '/login')
+        cy.url().should('include', 'localhost:9500/login')
   
         cy.getAllLocalStorage().then((result) => {
           if (result.hasOwnProperty(Cypress.config('baseUrl'))) {
